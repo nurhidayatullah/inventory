@@ -1,0 +1,117 @@
+Jul 13 04:59:02 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /liststok with parameters array (  'module' => 'liststok',  'action' => 'index',)
+Jul 13 04:59:04 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jul 13 04:59:04 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jul 13 04:59:04 symfony [info] {liststokActions} Call "liststokActions->executeIndex()"
+Jul 13 04:59:05 symfony [debug] {sfPropelLogger} time:  0.001 sec | slow:  NO | mem:    3.8 MB | mempeak:    3.8 MB | memdelta:      0.0 B | SET NAMES 'utf8'
+Jul 13 04:59:05 symfony [debug] {sfPropelLogger} time:  0.038 sec | slow:  NO | mem:    4.0 MB | mempeak:    4.0 MB | memdelta:      0.0 B | SELECT barang.ID, barang.NAMA_BARANG, barang.ID_KATEGORI, barang.STOCK, barang.ID_KEMASAN, barang.ID_PRODUSEN, barang.DESCRIPTION, barang.ID_HARGA FROM `barang`
+Jul 13 04:59:05 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\symfony\apps\frontend\modules/liststok/templates/indexSuccess.php"
+Jul 13 04:59:05 symfony [info] {sfPHPView} Decorate content with "C:\xampp\htdocs\symfony\apps\frontend\templates/layout.php"
+Jul 13 04:59:05 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\symfony\apps\frontend\templates/layout.php"
+Jul 13 04:59:05 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Jul 13 04:59:05 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jul 13 04:59:05 symfony [info] {sfWebDebugLogger} Configuration 608.03 ms (10)
+Jul 13 04:59:05 symfony [info] {sfWebDebugLogger} Factories 1495.09 ms (1)
+Jul 13 04:59:05 symfony [info] {sfWebDebugLogger} Action "liststok/index" 1378.08 ms (1)
+Jul 13 04:59:05 symfony [info] {sfWebDebugLogger} View "Success" for "liststok/index" 496.03 ms (1)
+Jul 13 04:59:06 symfony [info] {sfWebResponse} Send content (31010 o)
+Jul 13 04:59:14 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /liststok/new with parameters array (  'module' => 'liststok',  'action' => 'new',)
+Jul 13 04:59:14 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jul 13 04:59:14 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jul 13 04:59:14 symfony [info] {liststokActions} Call "liststokActions->executeNew()"
+Jul 13 04:59:14 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\symfony\apps\frontend\modules/liststok/templates/newSuccess.php"
+Jul 13 04:59:14 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\symfony\apps\frontend\modules/liststok/templates/_form.php"
+Jul 13 04:59:15 symfony [debug] {sfPropelLogger} time:  0.006 sec | slow:  NO | mem:    5.0 MB | mempeak:    5.0 MB | memdelta:      0.0 B | SET NAMES 'utf8'
+Jul 13 04:59:15 symfony [debug] {sfPropelLogger} time:  0.037 sec | slow:  NO | mem:    5.0 MB | mempeak:    5.3 MB | memdelta:      0.0 B | SELECT kategori.ID, kategori.NAMA_KATEGORI, kategori.KETERANGAN FROM `kategori`
+Jul 13 04:59:15 symfony [info] {sfPHPView} Decorate content with "C:\xampp\htdocs\symfony\apps\frontend\templates/layout.php"
+Jul 13 04:59:15 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\symfony\apps\frontend\templates/layout.php"
+Jul 13 04:59:15 symfony [warning] {sfWebDebugLogger}  Warning at C:\xampp\htdocs\symfony\lib\vendor\symfony\lib\exception\sfException.class.php on line 103 (ob_start(): function '' not found or invalid function name)
+Jul 13 04:59:15 symfony [notice] {sfWebDebugLogger}  Notice at C:\xampp\htdocs\symfony\lib\vendor\symfony\lib\exception\sfException.class.php on line 103 (ob_start(): failed to create buffer)
+Jul 13 04:59:15 symfony [warning] {sfWebDebugLogger}  Warning at C:\xampp\htdocs\symfony\lib\vendor\symfony\lib\exception\sfException.class.php on line 105 (Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\symfony\lib\vendor\symfony\lib\exception\sfException.class.php:103))
+Jul 13 04:59:15 symfony [err] {RuntimeException} Class "Kategori" must implement a "__toString" method to be rendered in a "sfWidgetFormPropelChoice" widget
+Jul 13 04:59:15 symfony [warning] {sfWebDebugLogger}  Warning at C:\xampp\htdocs\symfony\lib\vendor\symfony\lib\exception\sfException.class.php on line 159 (Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\symfony\lib\vendor\symfony\lib\exception\sfException.class.php:103))
+Jul 13 04:59:16 symfony [warning] {sfWebDebugLogger}  Warning at C:\xampp\htdocs\symfony\lib\vendor\symfony\lib\response\sfWebResponse.class.php on line 336 (Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\symfony\lib\vendor\symfony\lib\exception\sfException.class.php:103))
+Jul 13 04:59:16 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Jul 13 04:59:16 symfony [warning] {sfWebDebugLogger}  Warning at C:\xampp\htdocs\symfony\lib\vendor\symfony\lib\response\sfWebResponse.class.php on line 357 (Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\symfony\lib\vendor\symfony\lib\exception\sfException.class.php:103))
+Jul 13 04:59:16 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jul 13 04:59:16 symfony [info] {sfWebDebugLogger} Configuration 32.00 ms (9)
+Jul 13 04:59:16 symfony [info] {sfWebDebugLogger} Factories 142.01 ms (1)
+Jul 13 04:59:16 symfony [info] {sfWebDebugLogger} Action "liststok/new" 91.00 ms (1)
+Jul 13 04:59:16 symfony [info] {sfWebDebugLogger} View "Success" for "liststok/new" 1321.08 ms (1)
+Jul 13 04:59:16 symfony [info] {sfWebDebugLogger} Partial "liststok/_form" 1240.07 ms (1)
+Jul 13 04:59:16 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /liststok/new with parameters array (  'module' => 'liststok',  'action' => 'new',)
+Jul 13 04:59:16 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jul 13 04:59:16 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jul 13 04:59:16 symfony [info] {liststokActions} Call "liststokActions->executeNew()"
+Jul 13 04:59:16 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\symfony\apps\frontend\modules/liststok/templates/newSuccess.php"
+Jul 13 04:59:16 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\symfony\apps\frontend\modules/liststok/templates/_form.php"
+Jul 13 04:59:17 symfony [debug] {sfPropelLogger} time:  0.002 sec | slow:  NO | mem:    5.0 MB | mempeak:    5.0 MB | memdelta:      0.0 B | SET NAMES 'utf8'
+Jul 13 04:59:17 symfony [debug] {sfPropelLogger} time:  0.004 sec | slow:  NO | mem:    5.0 MB | mempeak:    5.3 MB | memdelta:      0.0 B | SELECT kategori.ID, kategori.NAMA_KATEGORI, kategori.KETERANGAN FROM `kategori`
+Jul 13 04:59:17 symfony [info] {sfPHPView} Decorate content with "C:\xampp\htdocs\symfony\apps\frontend\templates/layout.php"
+Jul 13 04:59:17 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\symfony\apps\frontend\templates/layout.php"
+Jul 13 04:59:17 symfony [warning] {sfWebDebugLogger}  Warning at C:\xampp\htdocs\symfony\lib\vendor\symfony\lib\exception\sfException.class.php on line 103 (ob_start(): function '' not found or invalid function name)
+Jul 13 04:59:17 symfony [notice] {sfWebDebugLogger}  Notice at C:\xampp\htdocs\symfony\lib\vendor\symfony\lib\exception\sfException.class.php on line 103 (ob_start(): failed to create buffer)
+Jul 13 04:59:17 symfony [warning] {sfWebDebugLogger}  Warning at C:\xampp\htdocs\symfony\lib\vendor\symfony\lib\exception\sfException.class.php on line 105 (Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\symfony\lib\vendor\symfony\lib\exception\sfException.class.php:103))
+Jul 13 04:59:17 symfony [err] {RuntimeException} Class "Kategori" must implement a "__toString" method to be rendered in a "sfWidgetFormPropelChoice" widget
+Jul 13 04:59:17 symfony [warning] {sfWebDebugLogger}  Warning at C:\xampp\htdocs\symfony\lib\vendor\symfony\lib\exception\sfException.class.php on line 159 (Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\symfony\lib\vendor\symfony\lib\exception\sfException.class.php:103))
+Jul 13 04:59:18 symfony [warning] {sfWebDebugLogger}  Warning at C:\xampp\htdocs\symfony\lib\vendor\symfony\lib\response\sfWebResponse.class.php on line 336 (Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\symfony\lib\vendor\symfony\lib\exception\sfException.class.php:103))
+Jul 13 04:59:18 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Jul 13 04:59:18 symfony [warning] {sfWebDebugLogger}  Warning at C:\xampp\htdocs\symfony\lib\vendor\symfony\lib\response\sfWebResponse.class.php on line 357 (Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\symfony\lib\vendor\symfony\lib\exception\sfException.class.php:103))
+Jul 13 04:59:18 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jul 13 04:59:18 symfony [info] {sfWebDebugLogger} Configuration 33.00 ms (9)
+Jul 13 04:59:18 symfony [info] {sfWebDebugLogger} Factories 113.01 ms (1)
+Jul 13 04:59:18 symfony [info] {sfWebDebugLogger} Action "liststok/new" 89.00 ms (1)
+Jul 13 04:59:18 symfony [info] {sfWebDebugLogger} View "Success" for "liststok/new" 1143.06 ms (1)
+Jul 13 04:59:18 symfony [info] {sfWebDebugLogger} Partial "liststok/_form" 1104.06 ms (1)
+Jul 13 05:43:54 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /liststok with parameters array (  'module' => 'liststok',  'action' => 'index',)
+Jul 13 05:43:54 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jul 13 05:43:54 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jul 13 05:43:54 symfony [info] {liststokActions} Call "liststokActions->executeIndex()"
+Jul 13 05:43:55 symfony [debug] {sfPropelLogger} time:  0.002 sec | slow:  NO | mem:    4.0 MB | mempeak:    4.0 MB | memdelta:      0.0 B | SET NAMES 'utf8'
+Jul 13 05:43:55 symfony [debug] {sfPropelLogger} time:  0.002 sec | slow:  NO | mem:    4.3 MB | mempeak:    4.3 MB | memdelta:      0.0 B | SELECT barang.ID, barang.NAMA_BARANG, barang.ID_KATEGORI, barang.STOCK, barang.ID_KEMASAN, barang.ID_PRODUSEN, barang.DESCRIPTION, barang.ID_HARGA FROM `barang`
+Jul 13 05:43:55 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\symfony\apps\frontend\modules/liststok/templates/indexSuccess.php"
+Jul 13 05:43:55 symfony [info] {sfPHPView} Decorate content with "C:\xampp\htdocs\symfony\apps\frontend\templates/layout.php"
+Jul 13 05:43:55 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\symfony\apps\frontend\templates/layout.php"
+Jul 13 05:43:55 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Jul 13 05:43:55 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jul 13 05:43:55 symfony [info] {sfWebDebugLogger} Configuration 906.05 ms (9)
+Jul 13 05:43:55 symfony [info] {sfWebDebugLogger} Factories 304.02 ms (1)
+Jul 13 05:43:55 symfony [info] {sfWebDebugLogger} Action "liststok/index" 1106.06 ms (1)
+Jul 13 05:43:55 symfony [info] {sfWebDebugLogger} View "Success" for "liststok/index" 96.00 ms (1)
+Jul 13 05:43:55 symfony [info] {sfWebResponse} Send content (31963 o)
+Jul 13 05:44:00 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /liststok/new with parameters array (  'module' => 'liststok',  'action' => 'new',)
+Jul 13 05:44:00 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jul 13 05:44:00 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jul 13 05:44:00 symfony [info] {liststokActions} Call "liststokActions->executeNew()"
+Jul 13 05:44:00 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\symfony\apps\frontend\modules/liststok/templates/newSuccess.php"
+Jul 13 05:44:00 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\symfony\apps\frontend\modules/liststok/templates/_form.php"
+Jul 13 05:44:01 symfony [debug] {sfPropelLogger} time:  0.002 sec | slow:  NO | mem:    5.0 MB | mempeak:    5.0 MB | memdelta:      0.0 B | SET NAMES 'utf8'
+Jul 13 05:44:01 symfony [debug] {sfPropelLogger} time:  0.002 sec | slow:  NO | mem:    5.3 MB | mempeak:    5.3 MB | memdelta:      0.0 B | SELECT kategori.ID, kategori.NAMA_KATEGORI, kategori.KETERANGAN FROM `kategori`
+Jul 13 05:44:01 symfony [debug] {sfPropelLogger} time:  0.002 sec | slow:  NO | mem:    5.3 MB | mempeak:    5.3 MB | memdelta:      0.0 B | SELECT kemasan.ID, kemasan.NAMA_KEMASAN, kemasan.DESCRIPTION FROM `kemasan`
+Jul 13 05:44:01 symfony [debug] {sfPropelLogger} time:  0.002 sec | slow:  NO | mem:    5.8 MB | mempeak:    5.8 MB | memdelta:      0.0 B | SELECT produsen.ID, produsen.NAMA_PRODUSEN, produsen.ALAMAT, produsen.ID_KOTA, produsen.TELP FROM `produsen`
+Jul 13 05:44:01 symfony [debug] {sfPropelLogger} time:  0.002 sec | slow:  NO | mem:    6.0 MB | mempeak:    6.0 MB | memdelta:      0.0 B | SELECT harga.ID, harga.NOMINAL, harga.KURS, harga.DESCRIPTION FROM `harga`
+Jul 13 05:44:01 symfony [info] {sfPHPView} Decorate content with "C:\xampp\htdocs\symfony\apps\frontend\templates/layout.php"
+Jul 13 05:44:01 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\symfony\apps\frontend\templates/layout.php"
+Jul 13 05:44:01 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Jul 13 05:44:01 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jul 13 05:44:01 symfony [info] {sfWebDebugLogger} Configuration 34.00 ms (9)
+Jul 13 05:44:01 symfony [info] {sfWebDebugLogger} Factories 111.01 ms (1)
+Jul 13 05:44:01 symfony [info] {sfWebDebugLogger} Action "liststok/new" 89.00 ms (1)
+Jul 13 05:44:01 symfony [info] {sfWebDebugLogger} View "Success" for "liststok/new" 1214.07 ms (1)
+Jul 13 05:44:01 symfony [info] {sfWebDebugLogger} Partial "liststok/_form" 1142.07 ms (1)
+Jul 13 05:44:01 symfony [info] {sfWebResponse} Send content (42038 o)
+Jul 13 05:44:12 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /liststok with parameters array (  'module' => 'liststok',  'action' => 'index',)
+Jul 13 05:44:12 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jul 13 05:44:12 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jul 13 05:44:12 symfony [info] {liststokActions} Call "liststokActions->executeIndex()"
+Jul 13 05:44:13 symfony [debug] {sfPropelLogger} time:  0.001 sec | slow:  NO | mem:    3.3 MB | mempeak:    3.3 MB | memdelta:      0.0 B | SET NAMES 'utf8'
+Jul 13 05:44:13 symfony [debug] {sfPropelLogger} time:  0.004 sec | slow:  NO | mem:    3.5 MB | mempeak:    3.5 MB | memdelta:      0.0 B | SELECT barang.ID, barang.NAMA_BARANG, barang.ID_KATEGORI, barang.STOCK, barang.ID_KEMASAN, barang.ID_PRODUSEN, barang.DESCRIPTION, barang.ID_HARGA FROM `barang`
+Jul 13 05:44:13 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\symfony\apps\frontend\modules/liststok/templates/indexSuccess.php"
+Jul 13 05:44:13 symfony [info] {sfPHPView} Decorate content with "C:\xampp\htdocs\symfony\apps\frontend\templates/layout.php"
+Jul 13 05:44:13 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\symfony\apps\frontend\templates/layout.php"
+Jul 13 05:44:13 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Jul 13 05:44:13 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jul 13 05:44:13 symfony [info] {sfWebDebugLogger} Configuration 52.00 ms (9)
+Jul 13 05:44:13 symfony [info] {sfWebDebugLogger} Factories 118.01 ms (1)
+Jul 13 05:44:13 symfony [info] {sfWebDebugLogger} Action "liststok/index" 1084.06 ms (1)
+Jul 13 05:44:13 symfony [info] {sfWebDebugLogger} View "Success" for "liststok/index" 55.00 ms (1)
+Jul 13 05:44:13 symfony [info] {sfWebResponse} Send content (32047 o)

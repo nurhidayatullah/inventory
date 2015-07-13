@@ -1,0 +1,21 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           produsen
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              produsen
+    plural:                produsens
+    route_prefix:          produsen
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:    ~
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~
