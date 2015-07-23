@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <?php include_http_metas() ?>
@@ -95,9 +95,36 @@
 								</a>
 							</li>
 							<li>
+								<a href="<?php echo url_for('@supplier') ?>">
+									<span class="fa fa-sign-in"></span>
+									Master Supplier
+								</a>
+							</li>
+							<li>
 								<a href="<?php echo url_for('@harga') ?>">
 									<span class="fa fa-sign-in"></span>
 									Master Harga
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<i class="icon-rocket"></i>
+							<span class="title">Data Transaksi</span>
+							<span class="arrow"></span>
+						</a>
+						<ul class="sub-menu">
+							<li>
+								<a href="<?php echo url_for('@barangmasuk') ?>">
+									<span class="fa fa-sign-in"></span>
+									Barang Masuk
+								</a>
+							</li>
+							<li>
+								<a href="<?php echo url_for('@detailbarangmasuk') ?>">
+									<span class="fa fa-sign-in"></span>
+									Detail Barang Masuk
 								</a>
 							</li>
 						</ul>
@@ -107,19 +134,12 @@
 		</div>
 		<div class="page-content-wrapper">
 			<div class="page-content">
-				<h3 class="page-title">
-				Dashboard <small>reports & statistics</small>
-				</h3>
+				<h3 class="page-title">Aplikasi Inventory Barang </h3>
 				<div class="page-bar">
 					<ul class="page-breadcrumb">
-						<li>
-							<i class="fa fa-home"></i>
-							<a href="http://nur_hidayat-pc/aplikasi-mangga/admin/admin">Home</a>
-							<i class="fa fa-angle-right"></i>
-						</li>
-						<li>
-							<a href="#">Dashboard</a>
-						</li>
+						<?php include_component('isicsBreadcrumbs', 'show', array(
+                        'root' => array('text' => 'Dashboard', 'uri' => '@homepage')
+						)) ?>
 					</ul>
 				</div>
 				<!-- END PAGE HEADER-->

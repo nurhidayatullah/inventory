@@ -13,4 +13,38 @@ require_once dirname(__FILE__).'/../lib/kemasanGeneratorHelper.class.php';
  */
 class kemasanActions extends autoKemasanActions
 {
+	public function executeIndex(sfWebRequest $request)
+    {
+        parent::executeIndex($request);
+        $this->baseBreadcrumbs();
+    }
+
+    public function executeNew(sfWebRequest $request)
+    {
+		parent::executeNew($request);
+		$this->newBreadcrumbs();
+    }
+
+    public function executeEdit(sfWebRequest $request)
+    {
+        parent::executeEdit($request);
+        $this->editBreadcrumbs();
+    }
+	
+    private function baseBreadcrumbs()
+    {
+        isicsBreadcrumbs::getInstance()->addItem('Kemasan', '@kemasan');
+    }
+	
+    private function newBreadcrumbs()
+    {
+        isicsBreadcrumbs::getInstance()->addItem('Kemasan', '@kemasan');
+        isicsBreadcrumbs::getInstance()->addItem('New Kemasan', '@kemasan');
+    }
+	
+    private function editBreadcrumbs()
+    {
+        isicsBreadcrumbs::getInstance()->addItem('Kemasan', '@kemasan');
+        isicsBreadcrumbs::getInstance()->addItem('Edit Kemasan', '@kemasan');
+    }
 }

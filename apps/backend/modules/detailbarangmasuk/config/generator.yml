@@ -1,0 +1,27 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           detailbarangmasuk
+    theme:                 bootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              detailbarangmasuk
+    plural:                detailbarangmasuks
+    route_prefix:          detailbarangmasuk
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions:              ~
+
+      fields:               ~
+
+      list:                 ~
+
+      filter:               ~
+
+      form:                 ~
+
+      new:                  ~
+
+      edit:                 ~

@@ -1,0 +1,27 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           supplier
+    theme:                 bootstrap
+    non_verbose_templates: true
+    with_show:             false
+    singular:              supplier
+    plural:                suppliers
+    route_prefix:          supplier
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions:              ~
+
+      fields:               ~
+
+      list:                 ~
+
+      filter:               ~
+
+      form:                 ~
+
+      new:                  ~
+
+      edit:                 ~

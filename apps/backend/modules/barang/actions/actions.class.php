@@ -13,4 +13,38 @@ require_once dirname(__FILE__).'/../lib/barangGeneratorHelper.class.php';
  */
 class barangActions extends autoBarangActions
 {
+	public function executeIndex(sfWebRequest $request)
+    {
+        parent::executeIndex($request);
+        $this->baseBreadcrumbs();
+    }
+
+    public function executeNew(sfWebRequest $request)
+    {
+		parent::executeNew($request);
+		$this->newBreadcrumbs();
+    }
+
+    public function executeEdit(sfWebRequest $request)
+    {
+        parent::executeEdit($request);
+        $this->editBreadcrumbs();
+    }
+	
+    private function baseBreadcrumbs()
+    {
+        isicsBreadcrumbs::getInstance()->addItem('Barang', '@barang');
+    }
+	
+    private function newBreadcrumbs()
+    {
+        isicsBreadcrumbs::getInstance()->addItem('Barang', '@barang');
+        isicsBreadcrumbs::getInstance()->addItem('New Barang', '@barang');
+    }
+	
+    private function editBreadcrumbs()
+    {
+        isicsBreadcrumbs::getInstance()->addItem('Barang', '@barang');
+        isicsBreadcrumbs::getInstance()->addItem('Edit Barang', '@barang');
+    }
 }

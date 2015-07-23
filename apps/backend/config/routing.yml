@@ -1,3 +1,30 @@
+detailbarangmasuk:
+  class: sfPropelORMRouteCollection
+  options:
+    model:                detailbarangmasuk
+    module:               detailbarangmasuk
+    prefix_path:          /detailbarangmasuk
+    column:               id
+    with_wildcard_routes: true
+
+supplier:
+  class: sfPropelORMRouteCollection
+  options:
+    model:                supplier
+    module:               supplier
+    prefix_path:          /supplier
+    column:               id
+    with_wildcard_routes: true
+
+barangmasuk:
+  class: sfPropelORMRouteCollection
+  options:
+    model:                barangmasuk
+    module:               barang_masuk
+    prefix_path:          /barang_masuk
+    column:               id
+    with_wildcard_routes: true
+
 harga:
   class: sfPropelORMRouteCollection
   options:
@@ -49,7 +76,7 @@ kategori:
 # default rules
 homepage:
   url:   /
-  param: { module: barang, action: index }
+  param: { module: beranda, action: index }
 
 # generic rules
 # please, remove them by adding more specific rules

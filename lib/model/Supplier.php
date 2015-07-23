@@ -18,4 +18,7 @@
  */
 class Supplier extends BaseSupplier {
 
+	function __toString(){
+		return $this->getNamaSupplier();
+	}
 } // Supplier

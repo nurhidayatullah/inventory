@@ -18,4 +18,7 @@
  */
 class BarangMasuk extends BaseBarangMasuk {
 
+	function __toString(){
+		return $this->getSupplier()." ( ".$this->getTanggal()." ) ";
+	}
 } // BarangMasuk
