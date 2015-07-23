@@ -2,7 +2,7 @@ generator:
   class: sfPropelGenerator
   param:
     model_class:           barang
-    theme:                 admin
+    theme:                 bootstrap
     non_verbose_templates: true
     with_show:             false
     singular:              barang
@@ -13,9 +13,15 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
-      list:    ~
-      filter:  ~
-      form:    ~
-      edit:    ~
-      new:     ~
+      fields: ~
+      list:
+         title: Master Barang
+      filter:
+         display: [nama_barang,id_kategori,id_kemasan,id_produsen]
+      form:
+         display:
+            Form Barang: [nama_barang,id_kategori,id_kemasan,id_produsen,stock,description]
+      edit:
+         title: Edit Barang
+      new:
+         title: Add Barang

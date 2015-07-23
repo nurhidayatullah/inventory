@@ -115,3 +115,42 @@ Jul 13 05:44:13 symfony [info] {sfWebDebugLogger} Factories 118.01 ms (1)
 Jul 13 05:44:13 symfony [info] {sfWebDebugLogger} Action "liststok/index" 1084.06 ms (1)
 Jul 13 05:44:13 symfony [info] {sfWebDebugLogger} View "Success" for "liststok/index" 55.00 ms (1)
 Jul 13 05:44:13 symfony [info] {sfWebResponse} Send content (32047 o)
+Jul 23 02:30:00 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /barang with parameters array (  'module' => 'barang',  'action' => 'index',)
+Jul 23 02:30:00 symfony [info] {sfFrontWebController} Action "barang/index" does not exist
+Jul 23 02:30:01 symfony [warning] {sfWebDebugLogger}  Warning at C:\xampp\htdocs\inventory\lib\vendor\symfony\lib\exception\sfException.class.php on line 103 (ob_start(): function '' not found or invalid function name)
+Jul 23 02:30:01 symfony [notice] {sfWebDebugLogger}  Notice at C:\xampp\htdocs\inventory\lib\vendor\symfony\lib\exception\sfException.class.php on line 103 (ob_start(): failed to create buffer)
+Jul 23 02:30:01 symfony [warning] {sfWebDebugLogger}  Warning at C:\xampp\htdocs\inventory\lib\vendor\symfony\lib\exception\sfException.class.php on line 105 (Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\inventory\lib\vendor\symfony\lib\exception\sfException.class.php:103))
+Jul 23 02:30:01 symfony [err] {sfError404Exception} Action "barang/index" does not exist.
+Jul 23 02:30:01 symfony [warning] {sfWebDebugLogger}  Warning at C:\xampp\htdocs\inventory\lib\vendor\symfony\lib\exception\sfException.class.php on line 159 (Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\inventory\lib\vendor\symfony\lib\exception\sfException.class.php:103))
+Jul 23 02:30:01 symfony [warning] {sfWebDebugLogger}  Warning at C:\xampp\htdocs\inventory\lib\vendor\symfony\lib\response\sfWebResponse.class.php on line 336 (Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\inventory\lib\vendor\symfony\lib\exception\sfException.class.php:103))
+Jul 23 02:30:01 symfony [info] {sfWebResponse} Send status "HTTP/1.1 404 Not Found"
+Jul 23 02:30:01 symfony [warning] {sfWebDebugLogger}  Warning at C:\xampp\htdocs\inventory\lib\vendor\symfony\lib\response\sfWebResponse.class.php on line 357 (Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\inventory\lib\vendor\symfony\lib\exception\sfException.class.php:103))
+Jul 23 02:30:01 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jul 23 02:30:01 symfony [info] {sfWebDebugLogger} Configuration 2246.13 ms (5)
+Jul 23 02:30:01 symfony [info] {sfWebDebugLogger} Factories 1161.07 ms (1)
+Jul 23 02:30:06 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /barang with parameters array (  'module' => 'barang',  'action' => 'index',)
+Jul 23 02:30:06 symfony [info] {sfFrontWebController} Action "barang/index" does not exist
+Jul 23 02:30:07 symfony [warning] {sfWebDebugLogger}  Warning at C:\xampp\htdocs\inventory\lib\vendor\symfony\lib\exception\sfException.class.php on line 103 (ob_start(): function '' not found or invalid function name)
+Jul 23 02:30:07 symfony [notice] {sfWebDebugLogger}  Notice at C:\xampp\htdocs\inventory\lib\vendor\symfony\lib\exception\sfException.class.php on line 103 (ob_start(): failed to create buffer)
+Jul 23 02:30:07 symfony [warning] {sfWebDebugLogger}  Warning at C:\xampp\htdocs\inventory\lib\vendor\symfony\lib\exception\sfException.class.php on line 105 (Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\inventory\lib\vendor\symfony\lib\exception\sfException.class.php:103))
+Jul 23 02:30:07 symfony [err] {sfError404Exception} Action "barang/index" does not exist.
+Jul 23 02:30:07 symfony [warning] {sfWebDebugLogger}  Warning at C:\xampp\htdocs\inventory\lib\vendor\symfony\lib\exception\sfException.class.php on line 159 (Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\inventory\lib\vendor\symfony\lib\exception\sfException.class.php:103))
+Jul 23 02:30:07 symfony [warning] {sfWebDebugLogger}  Warning at C:\xampp\htdocs\inventory\lib\vendor\symfony\lib\response\sfWebResponse.class.php on line 336 (Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\inventory\lib\vendor\symfony\lib\exception\sfException.class.php:103))
+Jul 23 02:30:07 symfony [info] {sfWebResponse} Send status "HTTP/1.1 404 Not Found"
+Jul 23 02:30:07 symfony [warning] {sfWebDebugLogger}  Warning at C:\xampp\htdocs\inventory\lib\vendor\symfony\lib\response\sfWebResponse.class.php on line 357 (Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\inventory\lib\vendor\symfony\lib\exception\sfException.class.php:103))
+Jul 23 02:30:07 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jul 23 02:30:07 symfony [info] {sfWebDebugLogger} Configuration 128.01 ms (5)
+Jul 23 02:30:07 symfony [info] {sfWebDebugLogger} Factories 593.03 ms (1)
+Jul 23 02:30:08 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /barang with parameters array (  'module' => 'barang',  'action' => 'index',)
+Jul 23 02:30:08 symfony [info] {sfFrontWebController} Action "barang/index" does not exist
+Jul 23 02:30:08 symfony [warning] {sfWebDebugLogger}  Warning at C:\xampp\htdocs\inventory\lib\vendor\symfony\lib\exception\sfException.class.php on line 103 (ob_start(): function '' not found or invalid function name)
+Jul 23 02:30:08 symfony [notice] {sfWebDebugLogger}  Notice at C:\xampp\htdocs\inventory\lib\vendor\symfony\lib\exception\sfException.class.php on line 103 (ob_start(): failed to create buffer)
+Jul 23 02:30:08 symfony [warning] {sfWebDebugLogger}  Warning at C:\xampp\htdocs\inventory\lib\vendor\symfony\lib\exception\sfException.class.php on line 105 (Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\inventory\lib\vendor\symfony\lib\exception\sfException.class.php:103))
+Jul 23 02:30:08 symfony [err] {sfError404Exception} Action "barang/index" does not exist.
+Jul 23 02:30:08 symfony [warning] {sfWebDebugLogger}  Warning at C:\xampp\htdocs\inventory\lib\vendor\symfony\lib\exception\sfException.class.php on line 159 (Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\inventory\lib\vendor\symfony\lib\exception\sfException.class.php:103))
+Jul 23 02:30:08 symfony [warning] {sfWebDebugLogger}  Warning at C:\xampp\htdocs\inventory\lib\vendor\symfony\lib\response\sfWebResponse.class.php on line 336 (Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\inventory\lib\vendor\symfony\lib\exception\sfException.class.php:103))
+Jul 23 02:30:08 symfony [info] {sfWebResponse} Send status "HTTP/1.1 404 Not Found"
+Jul 23 02:30:08 symfony [warning] {sfWebDebugLogger}  Warning at C:\xampp\htdocs\inventory\lib\vendor\symfony\lib\response\sfWebResponse.class.php on line 357 (Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\inventory\lib\vendor\symfony\lib\exception\sfException.class.php:103))
+Jul 23 02:30:08 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jul 23 02:30:08 symfony [info] {sfWebDebugLogger} Configuration 73.00 ms (5)
+Jul 23 02:30:08 symfony [info] {sfWebDebugLogger} Factories 225.01 ms (1)

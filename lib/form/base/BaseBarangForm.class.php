@@ -21,7 +21,6 @@ abstract class BaseBarangForm extends BaseFormPropel
       'id_kemasan'  => new sfWidgetFormPropelChoice(array('model' => 'Kemasan', 'add_empty' => true)),
       'id_produsen' => new sfWidgetFormPropelChoice(array('model' => 'Produsen', 'add_empty' => true)),
       'description' => new sfWidgetFormTextarea(),
-      'id_harga'    => new sfWidgetFormPropelChoice(array('model' => 'Harga', 'add_empty' => true)),
     ));
 
     $this->setValidators(array(
@@ -32,7 +31,6 @@ abstract class BaseBarangForm extends BaseFormPropel
       'id_kemasan'  => new sfValidatorPropelChoice(array('model' => 'Kemasan', 'column' => 'id', 'required' => false)),
       'id_produsen' => new sfValidatorPropelChoice(array('model' => 'Produsen', 'column' => 'id', 'required' => false)),
       'description' => new sfValidatorString(array('required' => false)),
-      'id_harga'    => new sfValidatorPropelChoice(array('model' => 'Harga', 'column' => 'id', 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('barang[%s]');

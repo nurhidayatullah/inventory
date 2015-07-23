@@ -2,7 +2,7 @@ generator:
   class: sfPropelGenerator
   param:
     model_class:           produsen
-    theme:                 admin
+    theme:                 bootstrap
     non_verbose_templates: true
     with_show:             false
     singular:              produsen
@@ -13,9 +13,15 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
-      list:    ~
-      filter:  ~
-      form:    ~
-      edit:    ~
-      new:     ~
+      fields: ~
+      list:
+         title: Master Produsen
+      filter:
+         display: [nama_produsen,alamat,id_kota,telp]
+      form:
+         display:
+            Form Produsen: [nama_produsen,alamat,id_kota,telp]
+      edit:
+         title: Edit Produsen
+      new:
+         title: Add Produsen

@@ -2,7 +2,7 @@ generator:
   class: sfPropelGenerator
   param:
     model_class:           kemasan
-    theme:                 admin
+    theme:                 bootstrap
     non_verbose_templates: true
     with_show:             false
     singular:              kemasan
@@ -13,9 +13,15 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
-      list:    ~
-      filter:  ~
-      form:    ~
-      edit:    ~
-      new:     ~
+      fields: ~
+      list:
+         title: Master Kemasan
+      filter:
+         display: [nama_kemasan,description]
+      form:
+         display:
+            Form Kemasan: [nama_kemasan,description]
+      edit:
+         title: Edit Kemasan
+      new:
+         title: Add Kemasan

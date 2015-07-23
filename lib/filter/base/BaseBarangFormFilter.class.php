@@ -18,7 +18,6 @@ abstract class BaseBarangFormFilter extends BaseFormFilterPropel
       'id_kemasan'  => new sfWidgetFormPropelChoice(array('model' => 'Kemasan', 'add_empty' => true)),
       'id_produsen' => new sfWidgetFormPropelChoice(array('model' => 'Produsen', 'add_empty' => true)),
       'description' => new sfWidgetFormFilterInput(),
-      'id_harga'    => new sfWidgetFormPropelChoice(array('model' => 'Harga', 'add_empty' => true)),
     ));
 
     $this->setValidators(array(
@@ -28,7 +27,6 @@ abstract class BaseBarangFormFilter extends BaseFormFilterPropel
       'id_kemasan'  => new sfValidatorPropelChoice(array('required' => false, 'model' => 'Kemasan', 'column' => 'id')),
       'id_produsen' => new sfValidatorPropelChoice(array('required' => false, 'model' => 'Produsen', 'column' => 'id')),
       'description' => new sfValidatorPass(array('required' => false)),
-      'id_harga'    => new sfValidatorPropelChoice(array('required' => false, 'model' => 'Harga', 'column' => 'id')),
     ));
 
     $this->widgetSchema->setNameFormat('barang_filters[%s]');
@@ -53,7 +51,6 @@ abstract class BaseBarangFormFilter extends BaseFormFilterPropel
       'id_kemasan'  => 'ForeignKey',
       'id_produsen' => 'ForeignKey',
       'description' => 'Text',
-      'id_harga'    => 'ForeignKey',
     );
   }
 }

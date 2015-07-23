@@ -2,7 +2,7 @@ generator:
   class: sfPropelGenerator
   param:
     model_class:           harga
-    theme:                 admin
+    theme:                 bootstrap
     non_verbose_templates: true
     with_show:             false
     singular:              harga
@@ -13,9 +13,15 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
-      list:    ~
-      filter:  ~
-      form:    ~
-      edit:    ~
-      new:     ~
+      fields: ~
+      list:
+         title: Master Harga
+      filter:
+         display: [nominal,kurs,description,id_barang]
+      form:
+         display:
+            Form Harga: [nominal,kurs,description,id_barang,active]
+      edit:
+         title: Edit Harga
+      new:
+         title: Add Harga

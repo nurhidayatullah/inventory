@@ -3,108 +3,120 @@ propel:
     package: lib.model
     defaultIdMethod: native
   barang:
-    _attributes: { phpName: Barang }
-    id: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    _attributes: { phpName: Barang, idMethod: native }
+    id: { phpName: Id, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
     nama_barang: { phpName: NamaBarang, type: VARCHAR, size: '100', required: false }
-    id_kategori: { phpName: IdKategori, type: INTEGER, size: '11', required: false, foreignTable: kategori, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
-    stock: { phpName: Stock, type: INTEGER, size: '11', required: false }
-    id_kemasan: { phpName: IdKemasan, type: INTEGER, size: '11', required: false, foreignTable: kemasan, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
-    id_produsen: { phpName: IdProdusen, type: INTEGER, size: '11', required: false, foreignTable: produsen, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
+    id_kategori: { phpName: IdKategori, type: INTEGER, required: false, foreignTable: kategori, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
+    stock: { phpName: Stock, type: INTEGER, required: false }
+    id_kemasan: { phpName: IdKemasan, type: INTEGER, required: false, foreignTable: kemasan, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
+    id_produsen: { phpName: IdProdusen, type: INTEGER, required: false, foreignTable: produsen, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
     description: { phpName: Description, type: LONGVARCHAR, required: false }
-    id_harga: { phpName: IdHarga, type: INTEGER, size: '11', required: false, foreignTable: harga, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
-    _indexes: { kategori_barang: [id_kategori], kemasan_barang: [id_kemasan], produsen_barang: [id_produsen], barang_harga: [id_harga] }
+    _indexes: { kategori_barang: [id_kategori], kemasan_barang: [id_kemasan], produsen_barang: [id_produsen] }
   barang_masuk:
-    _attributes: { phpName: BarangMasuk }
-    id: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    _attributes: { phpName: BarangMasuk, idMethod: native }
+    id: { phpName: Id, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
     tanggal: { phpName: Tanggal, type: TIMESTAMP, required: false }
-    id_supplier: { phpName: IdSupplier, type: INTEGER, size: '11', required: false, foreignTable: supplier, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
-    total: { phpName: Total, type: INTEGER, size: '11', required: false }
+    id_supplier: { phpName: IdSupplier, type: INTEGER, required: false, foreignTable: supplier, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
+    total: { phpName: Total, type: INTEGER, required: false }
     _indexes: { masuk_supplier: [id_supplier] }
   customers:
-    _attributes: { phpName: Customers }
-    id: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    _attributes: { phpName: Customers, idMethod: native }
+    id: { phpName: Id, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
     nama_cust: { phpName: NamaCust, type: VARCHAR, size: '100', required: true }
     alamat: { phpName: Alamat, type: VARCHAR, size: '100', required: true }
-    id_kota: { phpName: IdKota, type: INTEGER, size: '11', required: false, foreignTable: kota, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
+    id_kota: { phpName: IdKota, type: INTEGER, required: false, foreignTable: kota, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
     telp: { phpName: Telp, type: VARCHAR, size: '20', required: false }
     _indexes: { cust_kota: [id_kota] }
   detail_barang_masuk:
-    _attributes: { phpName: DetailBarangMasuk }
-    id: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
-    id_barang_masuk: { phpName: IdBarangMasuk, type: INTEGER, size: '11', required: false, foreignTable: barang_masuk, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
-    id_barang: { phpName: IdBarang, type: INTEGER, size: '11', required: false, foreignTable: barang, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
-    harga: { phpName: Harga, type: INTEGER, size: '11', required: false }
+    _attributes: { phpName: DetailBarangMasuk, idMethod: native }
+    id: { phpName: Id, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    id_barang_masuk: { phpName: IdBarangMasuk, type: INTEGER, required: false, foreignTable: barang_masuk, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
+    id_barang: { phpName: IdBarang, type: INTEGER, required: false, foreignTable: barang, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
+    harga: { phpName: Harga, type: INTEGER, required: false }
     _indexes: { masuk_detail: [id_barang_masuk], masuk_barang: [id_barang] }
   detail_transaksi:
-    _attributes: { phpName: DetailTransaksi }
-    id: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
-    id_transaksi: { phpName: IdTransaksi, type: INTEGER, size: '11', required: false, foreignTable: transaksi, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
-    id_barang: { phpName: IdBarang, type: INTEGER, size: '11', required: false, foreignTable: barang, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
-    jumlah: { phpName: Jumlah, type: INTEGER, size: '11', required: false }
+    _attributes: { phpName: DetailTransaksi, idMethod: native }
+    id: { phpName: Id, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    id_transaksi: { phpName: IdTransaksi, type: INTEGER, required: false, foreignTable: transaksi, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
+    id_barang: { phpName: IdBarang, type: INTEGER, required: false, foreignTable: barang, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
+    jumlah: { phpName: Jumlah, type: INTEGER, required: false }
     _indexes: { detail_transaksi: [id_transaksi], detail_barang: [id_barang] }
   harga:
-    _attributes: { phpName: Harga }
-    id: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
-    nominal: { phpName: Nominal, type: INTEGER, size: '11', required: false }
+    _attributes: { phpName: Harga, idMethod: native }
+    id: { phpName: Id, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    nominal: { phpName: Nominal, type: INTEGER, required: false }
     kurs: { phpName: Kurs, type: VARCHAR, size: '20', required: false }
     description: { phpName: Description, type: LONGVARCHAR, required: false }
+    id_barang: { phpName: IdBarang, type: INTEGER, required: false, foreignTable: barang, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
+    active: { phpName: Active, type: INTEGER, size: '1', required: false }
+    _indexes: { harga_barang: [id_barang] }
   kategori:
-    _attributes: { phpName: Kategori }
-    id: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    _attributes: { phpName: Kategori, idMethod: native }
+    id: { phpName: Id, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
     nama_kategori: { phpName: NamaKategori, type: VARCHAR, size: '100', required: false }
     keterangan: { phpName: Keterangan, type: LONGVARCHAR, required: false }
   kemasan:
-    _attributes: { phpName: Kemasan }
-    id: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    _attributes: { phpName: Kemasan, idMethod: native }
+    id: { phpName: Id, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
     nama_kemasan: { phpName: NamaKemasan, type: VARCHAR, size: '100', required: false }
     description: { phpName: Description, type: LONGVARCHAR, required: false }
   kota:
-    _attributes: { phpName: Kota }
-    id: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    _attributes: { phpName: Kota, idMethod: native }
+    id: { phpName: Id, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
     nama_kota: { phpName: NamaKota, type: VARCHAR, size: '50', required: false }
-    id_propinsi: { phpName: IdPropinsi, type: INTEGER, size: '11', required: false, foreignTable: propinsi, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
+    id_propinsi: { phpName: IdPropinsi, type: INTEGER, required: false, foreignTable: propinsi, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
     _indexes: { kota_propinsi: [id_propinsi] }
   link_barang_rak:
-    _attributes: { phpName: LinkBarangRak }
-    id: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
-    id_barang: { phpName: IdBarang, type: INTEGER, size: '11', required: false, foreignTable: barang, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
-    id_rak: { phpName: IdRak, type: INTEGER, size: '11', required: false, foreignTable: rak, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
+    _attributes: { phpName: LinkBarangRak, idMethod: native }
+    id: { phpName: Id, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    id_barang: { phpName: IdBarang, type: INTEGER, required: false, foreignTable: barang, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
+    id_rak: { phpName: IdRak, type: INTEGER, required: false, foreignTable: rak, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
     _indexes: { barang_link: [id_barang], link_rak: [id_rak] }
+  log_barang:
+    _attributes: { phpName: LogBarang, idMethod: native }
+    id: { phpName: Id, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    tanggal: { phpName: Tanggal, type: TIMESTAMP, required: false }
+    id_barang: { phpName: IdBarang, type: INTEGER, required: false, foreignTable: barang, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
+    in: { phpName: In, type: INTEGER, required: false }
+    out: { phpName: Out, type: INTEGER, required: false }
+    saldo: { phpName: Saldo, type: INTEGER, required: false }
+    keterangan: { phpName: Keterangan, type: LONGVARCHAR, required: false }
+    _indexes: { log: [id_barang] }
   negara:
-    _attributes: { phpName: Negara }
-    id: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    _attributes: { phpName: Negara, idMethod: native }
+    id: { phpName: Id, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
     nama_negara: { phpName: NamaNegara, type: VARCHAR, size: '50', required: false }
   produsen:
-    _attributes: { phpName: Produsen }
-    id: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    _attributes: { phpName: Produsen, idMethod: native }
+    id: { phpName: Id, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
     nama_produsen: { phpName: NamaProdusen, type: VARCHAR, size: '100', required: true }
     alamat: { phpName: Alamat, type: VARCHAR, size: '100', required: true }
-    id_kota: { phpName: IdKota, type: INTEGER, size: '11', required: false, foreignTable: kota, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
+    id_kota: { phpName: IdKota, type: INTEGER, required: false, foreignTable: kota, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
     telp: { phpName: Telp, type: VARCHAR, size: '20', required: false }
     _indexes: { produsen_kota: [id_kota] }
   propinsi:
-    _attributes: { phpName: Propinsi }
-    id: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    _attributes: { phpName: Propinsi, idMethod: native }
+    id: { phpName: Id, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
     nama_propinsi: { phpName: NamaPropinsi, type: VARCHAR, size: '50', required: false }
-    id_negara: { phpName: IdNegara, type: INTEGER, size: '11', required: false, foreignTable: negara, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
+    id_negara: { phpName: IdNegara, type: INTEGER, required: false, foreignTable: negara, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
     _indexes: { negara_propinsi: [id_negara] }
   rak:
-    _attributes: { phpName: Rak }
-    id: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    _attributes: { phpName: Rak, idMethod: native }
+    id: { phpName: Id, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
     kode_rak: { phpName: KodeRak, type: VARCHAR, size: '3', required: false }
     keterangan: { phpName: Keterangan, type: LONGVARCHAR, required: false }
   supplier:
-    _attributes: { phpName: Supplier }
-    id: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    _attributes: { phpName: Supplier, idMethod: native }
+    id: { phpName: Id, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
     nama_supplier: { phpName: NamaSupplier, type: VARCHAR, size: '100', required: true }
     alamat: { phpName: Alamat, type: VARCHAR, size: '100', required: true }
-    id_kota: { phpName: IdKota, type: INTEGER, size: '11', required: false, foreignTable: kota, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
+    id_kota: { phpName: IdKota, type: INTEGER, required: false, foreignTable: kota, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
     telp: { phpName: Telp, type: VARCHAR, size: '20', required: false }
     _indexes: { suppl_kota: [id_kota] }
   transaksi:
-    _attributes: { phpName: Transaksi }
-    id: { phpName: Id, type: INTEGER, size: '11', primaryKey: true, autoIncrement: true, required: true }
+    _attributes: { phpName: Transaksi, idMethod: native }
+    id: { phpName: Id, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
     tanggal: { phpName: Tanggal, type: TIMESTAMP, required: false }
-    id_customers: { phpName: IdCustomers, type: INTEGER, size: '11', required: false, foreignTable: customers, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
-    total: { phpName: Total, type: INTEGER, size: '11', required: false }
+    id_customers: { phpName: IdCustomers, type: INTEGER, required: false, foreignTable: customers, foreignReference: id, onDelete: CASCADE, onUpdate: CASCADE }
+    total: { phpName: Total, type: INTEGER, required: false }
     _indexes: { tr_cust: [id_customers] }

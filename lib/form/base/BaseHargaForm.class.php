@@ -18,6 +18,8 @@ abstract class BaseHargaForm extends BaseFormPropel
       'nominal'     => new sfWidgetFormInputText(),
       'kurs'        => new sfWidgetFormInputText(),
       'description' => new sfWidgetFormTextarea(),
+      'id_barang'   => new sfWidgetFormPropelChoice(array('model' => 'Barang', 'add_empty' => true)),
+      'active'      => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
@@ -25,6 +27,8 @@ abstract class BaseHargaForm extends BaseFormPropel
       'nominal'     => new sfValidatorInteger(array('min' => -2147483648, 'max' => 2147483647, 'required' => false)),
       'kurs'        => new sfValidatorString(array('max_length' => 20, 'required' => false)),
       'description' => new sfValidatorString(array('required' => false)),
+      'id_barang'   => new sfValidatorPropelChoice(array('model' => 'Barang', 'column' => 'id', 'required' => false)),
+      'active'      => new sfValidatorInteger(array('min' => -2147483648, 'max' => 2147483647, 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('harga[%s]');

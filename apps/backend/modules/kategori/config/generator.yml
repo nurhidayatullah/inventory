@@ -2,7 +2,7 @@ generator:
   class: sfPropelGenerator
   param:
     model_class:           kategori
-    theme:                 admin
+    theme:                 bootstrap
     non_verbose_templates: true
     with_show:             false
     singular:              kategori
@@ -13,9 +13,15 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
-      list:    ~
-      filter:  ~
-      form:    ~
-      edit:    ~
-      new:     ~
+      fields: ~
+      list:
+         title: Master Kategori
+      filter:
+         display: [nama_kategori,keterangan]
+      form:
+         display:
+            Form Kategori: [nama_kategori,keterangan]
+      edit:
+         title: Edit Kategori
+      new:
+         title: Add Kategori

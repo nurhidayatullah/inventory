@@ -15,12 +15,16 @@ abstract class BaseHargaFormFilter extends BaseFormFilterPropel
       'nominal'     => new sfWidgetFormFilterInput(),
       'kurs'        => new sfWidgetFormFilterInput(),
       'description' => new sfWidgetFormFilterInput(),
+      'id_barang'   => new sfWidgetFormPropelChoice(array('model' => 'Barang', 'add_empty' => true)),
+      'active'      => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
       'nominal'     => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'kurs'        => new sfValidatorPass(array('required' => false)),
       'description' => new sfValidatorPass(array('required' => false)),
+      'id_barang'   => new sfValidatorPropelChoice(array('required' => false, 'model' => 'Barang', 'column' => 'id')),
+      'active'      => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
     ));
 
     $this->widgetSchema->setNameFormat('harga_filters[%s]');
@@ -42,6 +46,8 @@ abstract class BaseHargaFormFilter extends BaseFormFilterPropel
       'nominal'     => 'Number',
       'kurs'        => 'Text',
       'description' => 'Text',
+      'id_barang'   => 'ForeignKey',
+      'active'      => 'Number',
     );
   }
 }

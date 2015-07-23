@@ -1,18 +1,18 @@
+harga:
+  class: sfPropelORMRouteCollection
+  options:
+    model:                harga
+    module:               harga
+    prefix_path:          /harga
+    column:               id
+    with_wildcard_routes: true
+
 produsen:
   class: sfPropelRouteCollection
   options:
     model:                produsen
     module:               produsen
     prefix_path:          /produsen
-    column:               id
-    with_wildcard_routes: true
-
-harga:
-  class: sfPropelRouteCollection
-  options:
-    model:                harga
-    module:               harga
-    prefix_path:          /harga
     column:               id
     with_wildcard_routes: true
 
@@ -49,7 +49,7 @@ kategori:
 # default rules
 homepage:
   url:   /
-  param: { module: default, action: index }
+  param: { module: barang, action: index }
 
 # generic rules
 # please, remove them by adding more specific rules
@@ -59,3 +59,7 @@ default_index:
 
 default:
   url:   /:module/:action/*
+
+signout_homepage:
+  url:   /
+  param: { module: default, action: index }

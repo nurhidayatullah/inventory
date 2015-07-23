@@ -18,4 +18,7 @@
  */
 class Barang extends BaseBarang {
 
+	function __toString(){
+		return $this->getNamaBarang();
+	}
 } // Barang

@@ -6,15 +6,15 @@ default:
     content-type: text/html
 
   metas:
-    #title:        symfony project
-    #description:  symfony project
-    #keywords:     symfony, project
-    #language:     en
-    #robots:       index, follow
+    title:        Admin Panel
+    description:  Admin Panel for Inventory Application
+    keywords:     symfony, project
+    language:     en
+    robots:       index, follow
 
-  stylesheets:    [main.css]
+  stylesheets:    [bootstrap.min.css, main.css,font-awesome.min.css, '/admin/pages/css/tasks.css','components.css', 'plugins.css', '/admin/layout/css/layout.css', '/admin/layout/css/themes/darkblue.css', '/admin/layout/css/custom.css']
 
-  javascripts:    []
+  javascripts:    [jquery-2.0.2.min.js, bootstrap.min.js, metronic.js, '/admin/layout/scripts/layout.js', '/admin/layout/scripts/quick-sidebar.js', '/admin/layout/scripts/demo.js', '/admin/pages/scripts/index.js', '/admin/pages/scripts/tasks.js']
 
   has_layout:     true
   layout:         layout
