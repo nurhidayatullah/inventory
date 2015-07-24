@@ -10,4 +10,8 @@
  */
 class barangGeneratorHelper extends BaseBarangGeneratorHelper
 {
+	public function linkToExport($params)
+    {
+		return "<a href='".url_for('barang/cetak')."' class='btn btn-default'><i class='fa fa-print'></i> <span class='hidden-xs hidden-sm'>Export</span></a>";
+    }
 }
