@@ -19,9 +19,12 @@ class barangActions extends autoBarangActions
         $this->baseBreadcrumbs();
     }
 	
-	public function executeImport(sfWebRequest $request,$msg=""){
+	public function executeImport(sfWebRequest $request,$msg=null){
 		$this->form = $this->configuration->getForm();
 		$this->msg = $msg;
+		
+		isicsBreadcrumbs::getInstance()->addItem('Barang', '@barang');
+        isicsBreadcrumbs::getInstance()->addItem('Import Data', '@barang');
 	}
 	public function executeImportfile(sfWebRequest $request){
 		$allowed =  array('xlsx' ,'xls');
@@ -37,12 +40,72 @@ class barangActions extends autoBarangActions
 		}
 		$ext = pathinfo($theFileName, PATHINFO_EXTENSION);
 		if(!in_array($ext,$allowed) ) {
-			$this->msg = 'file type not allowed';
+			$this->msg = 'file type not allowed. File Type Must ';
+			$y = 0;
+			foreach($allowed as $x){
+				if($y!= count($allowed)-1){
+					$this->msg .= $x." or ";
+				}else{
+					$this->msg .= $x;
+				}
+				$y++;
+			}
 			$this->setTemplate('import');
 		}else{
 			move_uploaded_file($file['tmp_name'], "$import/$theFileName");
-			$this->getUser()->setFlash('notice', $notice.' You can add another one below.');
-            $this->redirect('@barang');
+			$inputFileName = $uploadDir.'/import/'.$theFileName;
+			try {
+				$inputFileType = PHPExcel_IOFactory::identify($inputFileName);
+				$objReader = PHPExcel_IOFactory::createReader($inputFileType);
+				$objPHPExcel = $objReader->load($inputFileName);
+				$data = $objPHPExcel->getActiveSheet()->toArray(null,true,true,true);
+
+				for( $x = 3; $x <= count($data);$x++){
+					
+					$c = new Criteria();
+					$c->add(KategoriPeer::NAMA_KATEGORI,$data[$x]['C'],Criteria::EQUAL);
+					$kategori = $this->getIdColumn(KategoriPeer::doSelect($c));
+					
+					$k = new Criteria();
+					$k->add(KemasanPeer::NAMA_KEMASAN,$data[$x]['E'],Criteria::EQUAL);
+					$kemasan = $this->getIdColumn(KemasanPeer::doSelect($k));
+					
+					$p = new Criteria();
+					$p->add(ProdusenPeer::NAMA_PRODUSEN,$data[$x]['F'],Criteria::EQUAL);
+					$produsen = $this->getIdColumn(ProdusenPeer::doSelect($p));
+					
+					$barang = BarangQuery::create()->findOneById($data[$x]['A']);
+					if(isset($barang)){
+						$barang->setNamaBarang($data[$x]['B']);
+						$barang->setIdKategori("".$kategori);
+						$barang->setStock($data[$x]['D']);
+						$barang->setIdKemasan("".$kemasan);
+						$barang->setIdProdusen("".$produsen);
+						$barang->setDescription($data[$x]['G']);
+						$barang->save();
+					}else{
+						$barang = new Barang();
+						$barang->setNamaBarang($data[$x]['B']);
+						$barang->setIdKategori("".$kategori);
+						$barang->setStock($data[$x]['D']);
+						$barang->setIdKemasan("".$kemasan);
+						$barang->setIdProdusen("".$produsen);
+						$barang->setDescription($data[$x]['G']);
+						$barang->save();
+					}
+				}
+				unlink($inputFileName);
+				$this->getUser()->setFlash('notice', $notice.' You can add another one below.');
+				$this->redirect('@barang');
+			} catch(Exception $e) {
+				die('Error loading file "'.pathinfo($inputFileName,PATHINFO_BASENAME).'": '.$e->getMessage());
+			}
+			
+		}
+	}
+	protected function getIdColumn($data){
+		foreach($data as $data){
+			return $data->getId();
 		}
 	}
 	public function executeCetak(sfWebRequest $request){
@@ -51,7 +114,43 @@ class barangActions extends autoBarangActions
 		$data = BarangPeer::doSelect($query);
 		
 		$excel->setActiveSheetIndex(0);
-		$i = 3;
+		$excel->getActiveSheet()->mergeCells('A1:G1');
+		$excel->getActiveSheet()->mergeCells('A2:G2');
+		$excel->getActiveSheet()->mergeCells('A3:G3');
+		
+		$styleHeader = array(
+			'font'  => array(
+				'bold'  => true,
+			),
+			'borders' => array(
+				'allborders' => array(
+					'style' => PHPExcel_Style_Border::BORDER_THIN
+				)
+			)
+		);
+		$style = array(
+			'borders' => array(
+				'allborders' => array(
+					'style' => PHPExcel_Style_Border::BORDER_THIN
+				)
+			)
+		);
+	
+		$excel->getActiveSheet()->setCellValue('A4', "ID");
+		$excel->getActiveSheet()->setCellValue('B4', "NAMA BARANG");
+		$excel->getActiveSheet()->setCellValue('C4', "KATEGORI");
+		$excel->getActiveSheet()->setCellValue('D4', "STOK");
+		$excel->getActiveSheet()->setCellValue('E4', "KEMASAN");
+		$excel->getActiveSheet()->setCellValue('F4', "PRODUSEN");
+		$excel->getActiveSheet()->setCellValue('G4', "DESCRIPTION");
+		for($i = 'A'; $i < 'H'; $i++){
+			$excel->getActiveSheet()->getColumnDimension($i)->setAutoSize(true);
+			$excel->getActiveSheet()->getStyle($i.'4')->applyFromArray($styleHeader);
+			
+			$excel->getActiveSheet()->getStyle($i.'4')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+		}
+		
+		$i = 5;
 		foreach($data as $barang){
 			$excel->getActiveSheet()->setCellValue('A'.$i, $barang->getId());
 			$excel->getActiveSheet()->setCellValue('B'.$i, $barang->getNamaBarang());
@@ -60,6 +159,10 @@ class barangActions extends autoBarangActions
 			$excel->getActiveSheet()->setCellValue('E'.$i, "".$barang->getKemasan());
 			$excel->getActiveSheet()->setCellValue('F'.$i, "".$barang->getProdusen());
 			$excel->getActiveSheet()->setCellValue('G'.$i, $barang->getDescription());
+			
+			for($j = 'A'; $j < 'H'; $j++){
+				$excel->getActiveSheet()->getStyle($j.$i)->applyFromArray($style);
+			}
 			$i++;
 		}
 		// save to web directory
