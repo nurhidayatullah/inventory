@@ -17894,3 +17894,286 @@ Jul 27 10:52:59 symfony [debug] {sfPropelLogger} time:  0.002 sec | slow:  NO | 
 Jul 27 10:52:59 symfony [debug] {sfPropelLogger} time:  0.001 sec | slow:  NO | mem:    9.5 MB | mempeak:    9.5 MB | memdelta:      0.0 B | SELECT `id`, `nama_produsen`, `alamat`, `id_kota`, `telp` FROM `produsen` WHERE `id` = 1
 Jul 27 10:52:59 symfony [debug] {sfPropelLogger} time:  0.001 sec | slow:  NO | mem:    9.5 MB | mempeak:    9.5 MB | memdelta:      0.0 B | SELECT `id`, `nama_kategori`, `keterangan` FROM `kategori` WHERE `id` = 3
 Jul 27 10:52:59 symfony [debug] {sfPropelLogger} time:  0.001 sec | slow:  NO | mem:    9.5 MB | mempeak:    9.5 MB | memdelta:      0.0 B | SELECT `id`, `nama_produsen`, `alamat`, `id_kota`, `telp` FROM `produsen` WHERE `id` = 2
+Jul 28 05:15:29 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /barang/import with parameters array (  'module' => 'barang',  'action' => 'import',)
+Jul 28 05:15:31 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jul 28 05:15:31 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jul 28 05:15:31 symfony [info] {barangActions} Call "barangActions->executeImport()"
+Jul 28 05:15:31 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\inventory\apps\backend\modules/barang/templates/importSuccess.php"
+Jul 28 05:15:31 symfony [info] {sfPHPView} Decorate content with "C:\xampp\htdocs\inventory\apps\backend\templates/layout.php"
+Jul 28 05:15:31 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\inventory\apps\backend\templates/layout.php"
+Jul 28 05:15:31 symfony [info] {main} Call "isicsBreadcrumbs->executeShow()"
+Jul 28 05:15:31 symfony [info] {sfPartialView} Render "C:/xampp/htdocs/inventory/plugins/isicsBreadcrumbsPlugin/modules/isicsBreadcrumbs/templates/_show.php"
+Jul 28 05:15:31 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Jul 28 05:15:31 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jul 28 05:15:31 symfony [info] {sfWebResponse} Send content (8334 o)
+Jul 28 05:15:33 symfony [info] {sfPatternRouting} Match route "barang" (/barang.:sf_format) for /barang with parameters array (  'module' => 'barang',  'action' => 'index',  'sf_format' => 'html',)
+Jul 28 05:15:33 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jul 28 05:15:33 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jul 28 05:15:33 symfony [info] {barangActions} Call "barangActions->executeIndex()"
+Jul 28 05:15:34 symfony [debug] {sfPropelLogger} time:  0.146 sec | slow: YES | mem:    6.5 MB | mempeak:    6.5 MB | memdelta:      0.0 B | SELECT COUNT(*) FROM `barang`
+Jul 28 05:15:35 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/indexSuccess.php"
+Jul 28 05:15:35 symfony [debug] {sfPropelLogger} time:  0.002 sec | slow:  NO | mem:    6.8 MB | mempeak:    6.8 MB | memdelta:      0.0 B | SELECT barang.id, barang.nama_barang, barang.id_kategori, barang.stock, barang.id_kemasan, barang.id_produsen, barang.description FROM `barang` LIMIT 10
+Jul 28 05:15:35 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_assets.php"
+Jul 28 05:15:35 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\apps\backend\modules/barang/templates/_list_actions.php"
+Jul 28 05:15:35 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_flashes.php"
+Jul 28 05:15:35 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_list_header.php"
+Jul 28 05:15:35 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_filters.php"
+Jul 28 05:15:35 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_filters_field.php"
+Jul 28 05:15:35 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_filters_field.php"
+Jul 28 05:15:35 symfony [debug] {sfPropelLogger} time:  0.064 sec | slow:  NO | mem:    7.5 MB | mempeak:    7.5 MB | memdelta:      0.0 B | SELECT kategori.id, kategori.nama_kategori, kategori.keterangan FROM `kategori`
+Jul 28 05:15:35 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_filters_field.php"
+Jul 28 05:15:35 symfony [debug] {sfPropelLogger} time:  0.035 sec | slow:  NO | mem:    8.0 MB | mempeak:    8.0 MB | memdelta:      0.0 B | SELECT kemasan.id, kemasan.nama_kemasan, kemasan.description FROM `kemasan`
+Jul 28 05:15:35 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_filters_field.php"
+Jul 28 05:15:35 symfony [debug] {sfPropelLogger} time:  0.029 sec | slow:  NO | mem:    8.5 MB | mempeak:    8.5 MB | memdelta:      0.0 B | SELECT produsen.id, produsen.nama_produsen, produsen.alamat, produsen.id_kota, produsen.telp FROM `produsen`
+Jul 28 05:15:35 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_list.php"
+Jul 28 05:15:35 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_list_th_tabular.php"
+Jul 28 05:15:35 symfony [info] {main} Set slot "sf_admin.current_header"
+Jul 28 05:15:35 symfony [info] {main} Get slot "sf_admin.current_header"
+Jul 28 05:15:35 symfony [info] {main} Set slot "sf_admin.current_header"
+Jul 28 05:15:35 symfony [info] {main} Get slot "sf_admin.current_header"
+Jul 28 05:15:35 symfony [info] {main} Set slot "sf_admin.current_header"
+Jul 28 05:15:35 symfony [info] {main} Get slot "sf_admin.current_header"
+Jul 28 05:15:35 symfony [info] {main} Set slot "sf_admin.current_header"
+Jul 28 05:15:35 symfony [info] {main} Get slot "sf_admin.current_header"
+Jul 28 05:15:35 symfony [info] {main} Set slot "sf_admin.current_header"
+Jul 28 05:15:35 symfony [info] {main} Get slot "sf_admin.current_header"
+Jul 28 05:15:35 symfony [info] {main} Set slot "sf_admin.current_header"
+Jul 28 05:15:35 symfony [info] {main} Get slot "sf_admin.current_header"
+Jul 28 05:15:35 symfony [info] {main} Set slot "sf_admin.current_header"
+Jul 28 05:15:35 symfony [info] {main} Get slot "sf_admin.current_header"
+Jul 28 05:15:35 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_chosen_datasets.php"
+Jul 28 05:15:35 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_list_td_batch_actions.php"
+Jul 28 05:15:35 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\apps\backend\modules/barang/templates/_list_td_tabular.php"
+Jul 28 05:15:35 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_list_td_actions.php"
+Jul 28 05:15:35 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_list_td_batch_actions.php"
+Jul 28 05:15:35 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\apps\backend\modules/barang/templates/_list_td_tabular.php"
+Jul 28 05:15:35 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_list_td_actions.php"
+Jul 28 05:15:35 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_list_td_batch_actions.php"
+Jul 28 05:15:35 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\apps\backend\modules/barang/templates/_list_td_tabular.php"
+Jul 28 05:15:35 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_list_td_actions.php"
+Jul 28 05:15:35 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_list_batch_actions.php"
+Jul 28 05:15:35 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_list_max_per_page.php"
+Jul 28 05:15:35 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\apps\backend\modules/barang/templates/_list_actions.php"
+Jul 28 05:15:35 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_list_footer.php"
+Jul 28 05:15:35 symfony [info] {sfPHPView} Decorate content with "C:\xampp\htdocs\inventory\apps\backend\templates/layout.php"
+Jul 28 05:15:35 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\inventory\apps\backend\templates/layout.php"
+Jul 28 05:15:35 symfony [info] {main} Call "isicsBreadcrumbs->executeShow()"
+Jul 28 05:15:35 symfony [info] {sfPartialView} Render "C:/xampp/htdocs/inventory/plugins/isicsBreadcrumbsPlugin/modules/isicsBreadcrumbs/templates/_show.php"
+Jul 28 05:15:35 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Jul 28 05:15:35 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jul 28 05:15:35 symfony [info] {sfWebResponse} Send content (28324 o)
+Jul 28 05:15:39 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /barang/cetak/action with parameters array (  'module' => 'barang',  'action' => 'cetak',)
+Jul 28 05:15:39 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jul 28 05:15:39 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jul 28 05:15:39 symfony [info] {barangActions} Call "barangActions->executeCetak()"
+Jul 28 05:15:41 symfony [debug] {sfPropelLogger} time:  0.001 sec | slow:  NO | mem:    8.0 MB | mempeak:    8.0 MB | memdelta:      0.0 B | SELECT barang.id, barang.nama_barang, barang.id_kategori, barang.stock, barang.id_kemasan, barang.id_produsen, barang.description FROM `barang`
+Jul 28 05:15:41 symfony [debug] {sfPropelLogger} time:  0.019 sec | slow:  NO | mem:    8.5 MB | mempeak:    8.5 MB | memdelta:      0.0 B | SELECT `id`, `nama_kategori`, `keterangan` FROM `kategori` WHERE `id` = 1
+Jul 28 05:15:41 symfony [debug] {sfPropelLogger} time:  0.001 sec | slow:  NO | mem:    9.0 MB | mempeak:    9.0 MB | memdelta:      0.0 B | SELECT `id`, `nama_kemasan`, `description` FROM `kemasan` WHERE `id` = 1
+Jul 28 05:15:41 symfony [debug] {sfPropelLogger} time:  0.002 sec | slow:  NO | mem:    9.5 MB | mempeak:    9.5 MB | memdelta:      0.0 B | SELECT `id`, `nama_produsen`, `alamat`, `id_kota`, `telp` FROM `produsen` WHERE `id` = 1
+Jul 28 05:15:41 symfony [debug] {sfPropelLogger} time:  0.001 sec | slow:  NO | mem:    9.5 MB | mempeak:    9.5 MB | memdelta:      0.0 B | SELECT `id`, `nama_kategori`, `keterangan` FROM `kategori` WHERE `id` = 3
+Jul 28 05:15:41 symfony [debug] {sfPropelLogger} time:  0.001 sec | slow:  NO | mem:    9.5 MB | mempeak:    9.5 MB | memdelta:      0.0 B | SELECT `id`, `nama_produsen`, `alamat`, `id_kota`, `telp` FROM `produsen` WHERE `id` = 2
+Jul 28 05:16:01 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /barang/import/action with parameters array (  'module' => 'barang',  'action' => 'import',)
+Jul 28 05:16:02 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jul 28 05:16:02 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jul 28 05:16:02 symfony [info] {barangActions} Call "barangActions->executeImport()"
+Jul 28 05:16:02 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\inventory\apps\backend\modules/barang/templates/importSuccess.php"
+Jul 28 05:16:02 symfony [info] {sfPHPView} Decorate content with "C:\xampp\htdocs\inventory\apps\backend\templates/layout.php"
+Jul 28 05:16:02 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\inventory\apps\backend\templates/layout.php"
+Jul 28 05:16:02 symfony [info] {main} Call "isicsBreadcrumbs->executeShow()"
+Jul 28 05:16:02 symfony [info] {sfPartialView} Render "C:/xampp/htdocs/inventory/plugins/isicsBreadcrumbsPlugin/modules/isicsBreadcrumbs/templates/_show.php"
+Jul 28 05:16:02 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Jul 28 05:16:02 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jul 28 05:16:02 symfony [info] {sfWebResponse} Send content (8334 o)
+Jul 28 05:16:08 symfony [info] {sfPatternRouting} Match route "barang_collection" (/barang/:action/action.:sf_format) for /barang/importfile/action with parameters array (  'module' => 'barang',  'action' => 'importfile',  'sf_format' => 'html',)
+Jul 28 05:16:08 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jul 28 05:16:08 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jul 28 05:16:08 symfony [info] {barangActions} Call "barangActions->executeImportfile()"
+Jul 28 05:16:09 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\inventory\apps\backend\modules/barang/templates/importfileSuccess.php"
+Jul 28 05:16:09 symfony [info] {sfPHPView} Decorate content with "C:\xampp\htdocs\inventory\apps\backend\templates/layout.php"
+Jul 28 05:16:09 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\inventory\apps\backend\templates/layout.php"
+Jul 28 05:16:09 symfony [info] {main} Call "isicsBreadcrumbs->executeShow()"
+Jul 28 05:16:09 symfony [info] {sfPartialView} Render "C:/xampp/htdocs/inventory/plugins/isicsBreadcrumbsPlugin/modules/isicsBreadcrumbs/templates/_show.php"
+Jul 28 05:16:09 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Jul 28 05:16:09 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jul 28 05:16:09 symfony [info] {sfWebResponse} Send content (7348 o)
+Jul 28 05:16:13 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /barang/importfile/action with parameters array (  'module' => 'barang',  'action' => 'importfile',)
+Jul 28 05:16:13 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jul 28 05:16:13 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jul 28 05:16:13 symfony [info] {barangActions} Call "barangActions->executeImportfile()"
+Jul 28 05:16:14 symfony [info] {barangActions} Change template to "CURRENT/import"
+Jul 28 05:16:14 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\inventory\apps\backend\modules/barang/templates/importSuccess.php"
+Jul 28 05:16:14 symfony [info] {sfPHPView} Decorate content with "C:\xampp\htdocs\inventory\apps\backend\templates/layout.php"
+Jul 28 05:16:14 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\inventory\apps\backend\templates/layout.php"
+Jul 28 05:16:14 symfony [info] {main} Call "isicsBreadcrumbs->executeShow()"
+Jul 28 05:16:14 symfony [info] {sfPartialView} Render "C:/xampp/htdocs/inventory/plugins/isicsBreadcrumbsPlugin/modules/isicsBreadcrumbs/templates/_show.php"
+Jul 28 05:16:14 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Jul 28 05:16:14 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jul 28 05:16:14 symfony [info] {sfWebResponse} Send content (8268 o)
+Jul 28 06:22:37 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /barang/import with parameters array (  'module' => 'barang',  'action' => 'import',)
+Jul 28 06:22:37 symfony [info] {myUser} Automatic user logout due to timeout
+Jul 28 06:22:37 symfony [info] {myUser} User is not authenticated
+Jul 28 06:22:37 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jul 28 06:22:37 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jul 28 06:22:37 symfony [info] {barangActions} Call "barangActions->executeImport()"
+Jul 28 06:22:37 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\inventory\apps\backend\modules/barang/templates/importSuccess.php"
+Jul 28 06:22:37 symfony [info] {sfPHPView} Decorate content with "C:\xampp\htdocs\inventory\apps\backend\templates/layout.php"
+Jul 28 06:22:37 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\inventory\apps\backend\templates/layout.php"
+Jul 28 06:22:37 symfony [info] {main} Call "isicsBreadcrumbs->executeShow()"
+Jul 28 06:22:37 symfony [info] {sfPartialView} Render "C:/xampp/htdocs/inventory/plugins/isicsBreadcrumbsPlugin/modules/isicsBreadcrumbs/templates/_show.php"
+Jul 28 06:22:37 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Jul 28 06:22:37 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jul 28 06:22:37 symfony [info] {sfWebResponse} Send content (8334 o)
+Jul 28 06:22:42 symfony [info] {sfPatternRouting} Match route "barang" (/barang.:sf_format) for /barang with parameters array (  'module' => 'barang',  'action' => 'index',  'sf_format' => 'html',)
+Jul 28 06:22:42 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jul 28 06:22:42 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jul 28 06:22:42 symfony [info] {barangActions} Call "barangActions->executeIndex()"
+Jul 28 06:22:43 symfony [debug] {sfPropelLogger} time:  0.002 sec | slow:  NO | mem:    6.5 MB | mempeak:    6.5 MB | memdelta:      0.0 B | SELECT COUNT(*) FROM `barang`
+Jul 28 06:22:43 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/indexSuccess.php"
+Jul 28 06:22:43 symfony [debug] {sfPropelLogger} time:  0.002 sec | slow:  NO | mem:    6.8 MB | mempeak:    6.8 MB | memdelta:      0.0 B | SELECT barang.id, barang.nama_barang, barang.id_kategori, barang.stock, barang.id_kemasan, barang.id_produsen, barang.description FROM `barang` LIMIT 10
+Jul 28 06:22:43 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_assets.php"
+Jul 28 06:22:43 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\apps\backend\modules/barang/templates/_list_actions.php"
+Jul 28 06:22:43 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_flashes.php"
+Jul 28 06:22:43 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_list_header.php"
+Jul 28 06:22:43 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_filters.php"
+Jul 28 06:22:43 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_filters_field.php"
+Jul 28 06:22:43 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_filters_field.php"
+Jul 28 06:22:43 symfony [debug] {sfPropelLogger} time:  0.002 sec | slow:  NO | mem:    7.5 MB | mempeak:    7.5 MB | memdelta:      0.0 B | SELECT kategori.id, kategori.nama_kategori, kategori.keterangan FROM `kategori`
+Jul 28 06:22:43 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_filters_field.php"
+Jul 28 06:22:43 symfony [debug] {sfPropelLogger} time:  0.002 sec | slow:  NO | mem:    8.0 MB | mempeak:    8.0 MB | memdelta:      0.0 B | SELECT kemasan.id, kemasan.nama_kemasan, kemasan.description FROM `kemasan`
+Jul 28 06:22:43 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_filters_field.php"
+Jul 28 06:22:43 symfony [debug] {sfPropelLogger} time:  0.002 sec | slow:  NO | mem:    8.5 MB | mempeak:    8.5 MB | memdelta:      0.0 B | SELECT produsen.id, produsen.nama_produsen, produsen.alamat, produsen.id_kota, produsen.telp FROM `produsen`
+Jul 28 06:22:44 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_list.php"
+Jul 28 06:22:44 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_list_th_tabular.php"
+Jul 28 06:22:44 symfony [info] {main} Set slot "sf_admin.current_header"
+Jul 28 06:22:44 symfony [info] {main} Get slot "sf_admin.current_header"
+Jul 28 06:22:44 symfony [info] {main} Set slot "sf_admin.current_header"
+Jul 28 06:22:44 symfony [info] {main} Get slot "sf_admin.current_header"
+Jul 28 06:22:44 symfony [info] {main} Set slot "sf_admin.current_header"
+Jul 28 06:22:44 symfony [info] {main} Get slot "sf_admin.current_header"
+Jul 28 06:22:44 symfony [info] {main} Set slot "sf_admin.current_header"
+Jul 28 06:22:44 symfony [info] {main} Get slot "sf_admin.current_header"
+Jul 28 06:22:44 symfony [info] {main} Set slot "sf_admin.current_header"
+Jul 28 06:22:44 symfony [info] {main} Get slot "sf_admin.current_header"
+Jul 28 06:22:44 symfony [info] {main} Set slot "sf_admin.current_header"
+Jul 28 06:22:44 symfony [info] {main} Get slot "sf_admin.current_header"
+Jul 28 06:22:44 symfony [info] {main} Set slot "sf_admin.current_header"
+Jul 28 06:22:44 symfony [info] {main} Get slot "sf_admin.current_header"
+Jul 28 06:22:44 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_chosen_datasets.php"
+Jul 28 06:22:44 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_list_td_batch_actions.php"
+Jul 28 06:22:44 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\apps\backend\modules/barang/templates/_list_td_tabular.php"
+Jul 28 06:22:44 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_list_td_actions.php"
+Jul 28 06:22:44 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_list_td_batch_actions.php"
+Jul 28 06:22:44 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\apps\backend\modules/barang/templates/_list_td_tabular.php"
+Jul 28 06:22:44 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_list_td_actions.php"
+Jul 28 06:22:44 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_list_td_batch_actions.php"
+Jul 28 06:22:44 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\apps\backend\modules/barang/templates/_list_td_tabular.php"
+Jul 28 06:22:44 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_list_td_actions.php"
+Jul 28 06:22:44 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_list_batch_actions.php"
+Jul 28 06:22:44 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_list_max_per_page.php"
+Jul 28 06:22:44 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\apps\backend\modules/barang/templates/_list_actions.php"
+Jul 28 06:22:44 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_list_footer.php"
+Jul 28 06:22:44 symfony [info] {sfPHPView} Decorate content with "C:\xampp\htdocs\inventory\apps\backend\templates/layout.php"
+Jul 28 06:22:44 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\inventory\apps\backend\templates/layout.php"
+Jul 28 06:22:44 symfony [info] {main} Call "isicsBreadcrumbs->executeShow()"
+Jul 28 06:22:44 symfony [info] {sfPartialView} Render "C:/xampp/htdocs/inventory/plugins/isicsBreadcrumbsPlugin/modules/isicsBreadcrumbs/templates/_show.php"
+Jul 28 06:22:44 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Jul 28 06:22:44 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jul 28 06:22:44 symfony [info] {sfWebResponse} Send content (28324 o)
+Jul 28 06:22:48 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /barang/remoteBatchAll/action with parameters array (  'module' => 'barang',  'action' => 'remoteBatchAll',)
+Jul 28 06:22:48 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jul 28 06:22:48 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jul 28 06:22:48 symfony [info] {barangActions} Call "barangActions->executeRemoteBatchAll()"
+Jul 28 06:22:50 symfony [debug] {sfPropelLogger} time:  0.002 sec | slow:  NO | mem:    6.5 MB | mempeak:    6.5 MB | memdelta:      0.0 B | SELECT barang.id AS `Id` FROM `barang`
+Jul 28 06:22:50 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_chosen_datasets.php"
+Jul 28 06:22:50 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Jul 28 06:22:50 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jul 28 06:22:50 symfony [info] {sfWebResponse} Send content (66 o)
+Jul 28 06:22:53 symfony [info] {sfPatternRouting} Match route "barang_collection" (/barang/:action/action.:sf_format) for /barang/batch/action with parameters array (  'module' => 'barang',  'action' => 'batch',  'sf_format' => 'html',)
+Jul 28 06:22:54 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jul 28 06:22:54 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jul 28 06:22:54 symfony [info] {barangActions} Call "barangActions->executeBatch()"
+Jul 28 06:22:55 symfony [debug] {sfPropelLogger} time:  0.002 sec | slow:  NO | mem:    6.0 MB | mempeak:    6.3 MB | memdelta:      0.0 B | SELECT COUNT(*) FROM `barang` WHERE barang.id IN ('1','2','3')
+Jul 28 06:22:55 symfony [debug] {sfPropelLogger} time:  0.002 sec | slow:  NO | mem:    6.3 MB | mempeak:    6.3 MB | memdelta:      0.0 B | SELECT barang.id, barang.nama_barang, barang.id_kategori, barang.stock, barang.id_kemasan, barang.id_produsen, barang.description FROM `barang` WHERE barang.id IN ('1','2','3')
+Jul 28 06:22:55 symfony [debug] {sfPropelLogger} time:  0.002 sec | slow:  NO | mem:    6.3 MB | mempeak:    6.3 MB | memdelta:      0.0 B | SELECT barang.id, barang.nama_barang, barang.id_kategori, barang.stock, barang.id_kemasan, barang.id_produsen, barang.description FROM `barang` WHERE barang.id=1
+Jul 28 06:22:55 symfony [debug] {sfPropelLogger} time:  0.002 sec | slow:  NO | mem:    6.3 MB | mempeak:    6.5 MB | memdelta:      0.0 B | DELETE FROM `detail_barang_masuk` WHERE detail_barang_masuk.id_barang=1
+Jul 28 06:22:55 symfony [debug] {sfPropelLogger} time:  0.002 sec | slow:  NO | mem:    6.5 MB | mempeak:    6.5 MB | memdelta:      0.0 B | DELETE FROM `detail_transaksi` WHERE detail_transaksi.id_barang=1
+Jul 28 06:22:55 symfony [debug] {sfPropelLogger} time:  0.001 sec | slow:  NO | mem:    6.8 MB | mempeak:    6.8 MB | memdelta:      0.0 B | DELETE FROM `harga` WHERE harga.id_barang=1
+Jul 28 06:22:55 symfony [debug] {sfPropelLogger} time:  0.002 sec | slow:  NO | mem:    7.0 MB | mempeak:    7.0 MB | memdelta:      0.0 B | DELETE FROM `link_barang_rak` WHERE link_barang_rak.id_barang=1
+Jul 28 06:22:55 symfony [debug] {sfPropelLogger} time:  0.003 sec | slow:  NO | mem:    7.3 MB | mempeak:    7.3 MB | memdelta:      0.0 B | DELETE FROM `log_barang` WHERE log_barang.id_barang=1
+Jul 28 06:22:55 symfony [debug] {sfPropelLogger} time:  0.002 sec | slow:  NO | mem:    7.3 MB | mempeak:    7.3 MB | memdelta:      0.0 B | DELETE FROM `barang` WHERE barang.id=1
+Jul 28 06:22:55 symfony [debug] {sfPropelLogger} time:  0.001 sec | slow:  NO | mem:    7.3 MB | mempeak:    7.3 MB | memdelta:      0.0 B | SELECT barang.id, barang.nama_barang, barang.id_kategori, barang.stock, barang.id_kemasan, barang.id_produsen, barang.description FROM `barang` WHERE barang.id=2
+Jul 28 06:22:55 symfony [debug] {sfPropelLogger} time:  0.002 sec | slow:  NO | mem:    7.3 MB | mempeak:    7.3 MB | memdelta:      0.0 B | DELETE FROM `detail_barang_masuk` WHERE detail_barang_masuk.id_barang=2
+Jul 28 06:22:55 symfony [debug] {sfPropelLogger} time:  0.001 sec | slow:  NO | mem:    7.3 MB | mempeak:    7.3 MB | memdelta:      0.0 B | DELETE FROM `detail_transaksi` WHERE detail_transaksi.id_barang=2
+Jul 28 06:22:55 symfony [debug] {sfPropelLogger} time:  0.001 sec | slow:  NO | mem:    7.3 MB | mempeak:    7.3 MB | memdelta:      0.0 B | DELETE FROM `harga` WHERE harga.id_barang=2
+Jul 28 06:22:55 symfony [debug] {sfPropelLogger} time:  0.001 sec | slow:  NO | mem:    7.3 MB | mempeak:    7.3 MB | memdelta:      0.0 B | DELETE FROM `link_barang_rak` WHERE link_barang_rak.id_barang=2
+Jul 28 06:22:55 symfony [debug] {sfPropelLogger} time:  0.001 sec | slow:  NO | mem:    7.3 MB | mempeak:    7.3 MB | memdelta:      0.0 B | DELETE FROM `log_barang` WHERE log_barang.id_barang=2
+Jul 28 06:22:55 symfony [debug] {sfPropelLogger} time:  0.001 sec | slow:  NO | mem:    7.3 MB | mempeak:    7.3 MB | memdelta:      0.0 B | DELETE FROM `barang` WHERE barang.id=2
+Jul 28 06:22:55 symfony [debug] {sfPropelLogger} time:  0.001 sec | slow:  NO | mem:    7.3 MB | mempeak:    7.3 MB | memdelta:      0.0 B | SELECT barang.id, barang.nama_barang, barang.id_kategori, barang.stock, barang.id_kemasan, barang.id_produsen, barang.description FROM `barang` WHERE barang.id=3
+Jul 28 06:22:55 symfony [debug] {sfPropelLogger} time:  0.002 sec | slow:  NO | mem:    7.3 MB | mempeak:    7.3 MB | memdelta:      0.0 B | DELETE FROM `detail_barang_masuk` WHERE detail_barang_masuk.id_barang=3
+Jul 28 06:22:55 symfony [debug] {sfPropelLogger} time:  0.001 sec | slow:  NO | mem:    7.3 MB | mempeak:    7.3 MB | memdelta:      0.0 B | DELETE FROM `detail_transaksi` WHERE detail_transaksi.id_barang=3
+Jul 28 06:22:55 symfony [debug] {sfPropelLogger} time:  0.001 sec | slow:  NO | mem:    7.3 MB | mempeak:    7.3 MB | memdelta:      0.0 B | DELETE FROM `harga` WHERE harga.id_barang=3
+Jul 28 06:22:55 symfony [debug] {sfPropelLogger} time:  0.001 sec | slow:  NO | mem:    7.3 MB | mempeak:    7.3 MB | memdelta:      0.0 B | DELETE FROM `link_barang_rak` WHERE link_barang_rak.id_barang=3
+Jul 28 06:22:55 symfony [debug] {sfPropelLogger} time:  0.001 sec | slow:  NO | mem:    7.3 MB | mempeak:    7.3 MB | memdelta:      0.0 B | DELETE FROM `log_barang` WHERE log_barang.id_barang=3
+Jul 28 06:22:55 symfony [debug] {sfPropelLogger} time:  0.001 sec | slow:  NO | mem:    7.3 MB | mempeak:    7.3 MB | memdelta:      0.0 B | DELETE FROM `barang` WHERE barang.id=3
+Jul 28 06:22:55 symfony [info] {sfFrontWebController} Redirect to "http://localhost/inventory/web/backend_dev.php/barang"
+Jul 28 06:22:55 symfony [info] {sfWebResponse} Send status "HTTP/1.1 302 Found"
+Jul 28 06:22:55 symfony [info] {sfWebResponse} Send header "Location: http://localhost/inventory/web/backend_dev.php/barang"
+Jul 28 06:22:55 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jul 28 06:22:55 symfony [info] {sfWebResponse} Send content (124 o)
+Jul 28 06:22:56 symfony [info] {sfPatternRouting} Match route "barang" (/barang.:sf_format) for /barang with parameters array (  'module' => 'barang',  'action' => 'index',  'sf_format' => 'html',)
+Jul 28 06:22:56 symfony [info] {myUser} Flag old flash messages ("notice")
+Jul 28 06:22:56 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jul 28 06:22:56 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jul 28 06:22:56 symfony [info] {barangActions} Call "barangActions->executeIndex()"
+Jul 28 06:22:57 symfony [debug] {sfPropelLogger} time:  0.001 sec | slow:  NO | mem:    6.5 MB | mempeak:    6.5 MB | memdelta:      0.0 B | SELECT COUNT(*) FROM `barang`
+Jul 28 06:22:57 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/indexSuccess.php"
+Jul 28 06:22:57 symfony [debug] {sfPropelLogger} time:  0.002 sec | slow:  NO | mem:    6.8 MB | mempeak:    6.8 MB | memdelta:      0.0 B | SELECT barang.id, barang.nama_barang, barang.id_kategori, barang.stock, barang.id_kemasan, barang.id_produsen, barang.description FROM `barang` LIMIT 10
+Jul 28 06:22:57 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_assets.php"
+Jul 28 06:22:57 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\apps\backend\modules/barang/templates/_list_actions.php"
+Jul 28 06:22:57 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_flashes.php"
+Jul 28 06:22:57 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_list_header.php"
+Jul 28 06:22:57 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_filters.php"
+Jul 28 06:22:57 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_filters_field.php"
+Jul 28 06:22:57 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_filters_field.php"
+Jul 28 06:22:57 symfony [debug] {sfPropelLogger} time:  0.001 sec | slow:  NO | mem:    7.5 MB | mempeak:    7.5 MB | memdelta:      0.0 B | SELECT kategori.id, kategori.nama_kategori, kategori.keterangan FROM `kategori`
+Jul 28 06:22:57 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_filters_field.php"
+Jul 28 06:22:57 symfony [debug] {sfPropelLogger} time:  0.001 sec | slow:  NO | mem:    8.0 MB | mempeak:    8.0 MB | memdelta:      0.0 B | SELECT kemasan.id, kemasan.nama_kemasan, kemasan.description FROM `kemasan`
+Jul 28 06:22:57 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_filters_field.php"
+Jul 28 06:22:58 symfony [debug] {sfPropelLogger} time:  0.002 sec | slow:  NO | mem:    8.5 MB | mempeak:    8.5 MB | memdelta:      0.0 B | SELECT produsen.id, produsen.nama_produsen, produsen.alamat, produsen.id_kota, produsen.telp FROM `produsen`
+Jul 28 06:22:58 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_list.php"
+Jul 28 06:22:58 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_list_batch_actions.php"
+Jul 28 06:22:58 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_list_max_per_page.php"
+Jul 28 06:22:58 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\apps\backend\modules/barang/templates/_list_actions.php"
+Jul 28 06:22:58 symfony [info] {sfPartialView} Render "C:\xampp\htdocs\inventory\cache\backend\dev\modules/autoBarang/templates/_list_footer.php"
+Jul 28 06:22:58 symfony [info] {sfPHPView} Decorate content with "C:\xampp\htdocs\inventory\apps\backend\templates/layout.php"
+Jul 28 06:22:58 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\inventory\apps\backend\templates/layout.php"
+Jul 28 06:22:58 symfony [info] {main} Call "isicsBreadcrumbs->executeShow()"
+Jul 28 06:22:58 symfony [info] {sfPartialView} Render "C:/xampp/htdocs/inventory/plugins/isicsBreadcrumbsPlugin/modules/isicsBreadcrumbs/templates/_show.php"
+Jul 28 06:22:58 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Jul 28 06:22:58 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jul 28 06:22:58 symfony [info] {sfWebResponse} Send content (15051 o)
+Jul 28 06:22:58 symfony [info] {myUser} Remove old flash messages ("notice")
+Jul 29 06:52:58 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /barang/import with parameters array (  'module' => 'barang',  'action' => 'import',)
+Jul 29 06:52:59 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jul 29 06:52:59 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jul 29 06:52:59 symfony [info] {barangActions} Call "barangActions->executeImport()"
+Jul 29 06:53:00 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\inventory\apps\backend\modules/barang/templates/importSuccess.php"
+Jul 29 06:53:00 symfony [info] {sfPHPView} Decorate content with "C:\xampp\htdocs\inventory\apps\backend\templates/layout.php"
+Jul 29 06:53:00 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\inventory\apps\backend\templates/layout.php"
+Jul 29 06:53:00 symfony [info] {main} Call "isicsBreadcrumbs->executeShow()"
+Jul 29 06:53:00 symfony [info] {sfPartialView} Render "C:/xampp/htdocs/inventory/plugins/isicsBreadcrumbsPlugin/modules/isicsBreadcrumbs/templates/_show.php"
+Jul 29 06:53:00 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Jul 29 06:53:00 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jul 29 06:53:00 symfony [info] {sfWebResponse} Send content (8334 o)
+Jul 30 06:43:50 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /barang/import with parameters array (  'module' => 'barang',  'action' => 'import',)
+Jul 30 06:43:52 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Jul 30 06:43:52 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Jul 30 06:43:52 symfony [info] {barangActions} Call "barangActions->executeImport()"
+Jul 30 06:43:53 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\inventory\apps\backend\modules/barang/templates/importSuccess.php"
+Jul 30 06:43:54 symfony [info] {sfPHPView} Decorate content with "C:\xampp\htdocs\inventory\apps\backend\templates/layout.php"
+Jul 30 06:43:54 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\inventory\apps\backend\templates/layout.php"
+Jul 30 06:43:54 symfony [info] {main} Call "isicsBreadcrumbs->executeShow()"
+Jul 30 06:43:54 symfony [info] {sfPartialView} Render "C:/xampp/htdocs/inventory/plugins/isicsBreadcrumbsPlugin/modules/isicsBreadcrumbs/templates/_show.php"
+Jul 30 06:43:54 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Jul 30 06:43:54 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Jul 30 06:43:54 symfony [info] {sfWebResponse} Send content (8334 o)

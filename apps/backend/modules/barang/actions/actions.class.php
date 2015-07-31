@@ -59,7 +59,7 @@ class barangActions extends autoBarangActions
 				$objReader = PHPExcel_IOFactory::createReader($inputFileType);
 				$objPHPExcel = $objReader->load($inputFileName);
 				$data = $objPHPExcel->getActiveSheet()->toArray(null,true,true,true);
-
+		
 				for( $x = 3; $x <= count($data);$x++){
 					
 					$c = new Criteria();
